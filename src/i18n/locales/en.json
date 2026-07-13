@@ -1,0 +1,368 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "vision": "Vision & Mission",
+    "projects": "Projects",
+    "contact": "Contact Us",
+    "getQuote": "Get Quote"
+  },
+  "hero": {
+    "badge": "15+ Years of Excellence",
+    "title": "Experts in",
+    "fireProtection": "Fire Protection",
+    "and": "&",
+    "industrial": "Industrial",
+    "pipingSystems": "Piping Solutions",
+    "description": "We are dedicated to protecting lives, assets, and infrastructure through reliable fire safety systems and high-performance piping networks. With years of hands-on experience, technical expertise, and a passion for safety, we deliver engineering solutions that meet the highest standards of quality and compliance.",
+    "requestQuote": "Request a Quote",
+    "exploreProjects": "Explore Projects",
+    "stats": {
+      "projects": "Projects Completed",
+      "emergency": "Emergency Support",
+      "experience": "Years Experience"
+    },
+    "sideContent": {
+      "FireProtectionSystems": "Fire Protection Systems",
+      "fireSubTitle": "Advanced detection & suppression",
+      "smokeDetection": "Smoke Detection",
+      "fireSuppression": "Fire Suppression",
+      "gasDetection": "Gas Detection",
+      "heatSensors": "Heat Sensors",
+
+      "IndustrialPiping": "Industrial Piping Solutions",
+      "pipingSubTitle": "Complete installation solutions",
+      "steamsystems": "Steam Systems",
+      "compressedAir": "Compressed Air",
+      "processLines": "Process Lines",
+      "utilityPiping": "Utility Piping"
+    }
+  },
+  "about": {
+    "title": "About",
+    "smartPro": "SMART PRO",
+    "subtitle": "With over 15 years of excellence in fire protection and industrial piping, we deliver world-class safety solutions that protect lives and property.",
+    "leading": "Leading the Industry in Safety Solutions",
+    "description1": "SMART PRO has established itself as a trusted partner in fire protection and industrial installations. Our commitment to excellence and innovation has made us the preferred choice for businesses across various industries.",
+    "description2": "From small commercial buildings to large industrial complexes, we provide comprehensive solutions that meet the highest safety standards and regulatory requirements.",
+    "achievements": {
+      "1": "ISO 9001:2015 Certified",
+      "2": "500+ Successful Projects",
+      "3": "24/7 Emergency Response",
+      "4": "Licensed & Insured",
+      "5": "Expert Engineering Team",
+      "6": "Nationwide Service Coverage"
+    },
+    "specializations": {
+      "fireProtection": {
+        "title": "Fire Protection Systems",
+        "description": "Complete fire detection, alarm, and suppression systems"
+      },
+      "industrialPiping": {
+        "title": "Industrial Piping",
+        "description": "Steam, compressed air, and utility piping installations"
+      },
+      "mechanicalSystems": {
+        "title": "Mechanical Systems",
+        "description": "HVAC, process piping, and industrial equipment"
+      },
+      "safetyEngineering": {
+        "title": "Safety Engineering",
+        "description": "Comprehensive safety solutions and compliance"
+      }
+    },
+    "satisfaction": "Client Satisfaction"
+  },
+  "services": {
+    "title": "Our",
+    "services": "Services",
+    "subtitle": "Comprehensive fire protection and industrial solutions tailored to your specific needs",
+    "fireProtectionTitle": "Fire Protection Services",
+    "mechanicalTitle": "Mechanical & Utility Installations",
+    "fireDetection": {
+      "title": "Fire Detection Systems",
+      "description": "Advanced smoke, heat, and flame detection systems with intelligent monitoring.",
+      "features": {
+        "1": "Smoke Detectors",
+        "2": "Heat Sensors",
+        "3": "Flame Detectors",
+        "4": "Gas Detection"
+      }
+    },
+    "fireSuppression": {
+      "title": "Fire Suppression Systems",
+      "description": "Comprehensive suppression solutions including sprinklers and special systems.",
+      "features": {
+        "1": "Sprinkler Systems",
+        "2": "FM-200 Systems",
+        "3": "CO2 Suppression",
+        "4": "Foam Systems"
+      }
+    },
+    "fireAlarm": {
+      "title": "Fire Alarm Systems",
+      "description": "Intelligent fire alarm panels with voice evacuation and mass notification.",
+      "features": {
+        "1": "Alarm Panels",
+        "2": "Voice Evacuation",
+        "3": "Mass Notification",
+        "4": "Emergency Lighting"
+      }
+    },
+    "industrialPiping": {
+      "title": "Industrial Piping",
+      "description": "Complete piping solutions for steam, compressed air, and process systems.",
+      "features": {
+        "1": "Steam Piping",
+        "2": "Compressed Air",
+        "3": "Process Lines",
+        "4": "Utility Piping"
+      }
+    },
+    "mechanicalSystems": {
+      "title": "Mechanical Systems",
+      "description": "HVAC, process equipment, and mechanical installations.",
+      "features": {
+        "1": "HVAC Systems",
+        "2": "Process Equipment",
+        "3": "Pumping Systems",
+        "4": "Control Systems"
+      }
+    },
+    "facilityServices": {
+      "title": "Facility Services",
+      "description": "Complete facility management and maintenance services.",
+      "features": {
+        "1": "Preventive Maintenance",
+        "2": "Emergency Repairs",
+        "3": "System Upgrades",
+        "4": "Compliance Testing"
+      }
+    },
+    "learnMore": "Learn More",
+    "customSolution": "Need a Custom Solution?",
+    "customDescription": "Our expert team can design and implement tailored fire protection and industrial systems for your specific requirements.",
+    "getCustomQuote": "Get Custom Quote"
+  },
+  "vision": {
+    "title": "Vision &",
+    "mission": "Mission",
+    "subtitle": "Driving excellence in fire protection and industrial solutions with a clear vision for the future",
+    "ourVision": "Our Vision",
+    "visionText": "To become the first choice in the region for world-class fire protection and piping solutions, driven by innovation, sustainability, and engineering excellence.",
+    "visionPoints": [
+      "Regional Leadership",
+      "World-Class Standards",
+      "Customer Excellence"
+    ],
+    "ourMission": "Our Mission",
+    "missionText": "We are committed to protecting lives and property through innovative fire protection and industrial solutions, delivered with excellence and integrity.",
+    "missionPoints": [
+      "Deliver world-class fire protection and industrial solutions",
+      "Maintain the highest standards of safety and quality",
+      "Provide exceptional customer service and support",
+      "Continuously innovate and adopt latest technologies",
+      "Build long-term partnerships with our clients",
+      "Ensure compliance with all safety regulations and standards"
+    ],
+    "coreValues": "Why Choose",
+    "smart": "Smart Pro",
+    "valuesSubtitle": "Our Commitment to Excellence",
+    "values": {
+      "experience": {
+        "title": "Experienced Team",
+        "description": "Our engineers and technicians are highly qualified and bring years of hands-on experience in industrial systeminstallations."
+      },
+      "unCompromised": {
+        "title": "Un-compromised Quality",
+        "description": " We use only premium materials and systems that comply with the highest global standards to ensure durability and safety. "
+      },
+      "time": {
+        "title": "On-Time Delivery",
+        "description": "Every project is executed with precision, staying within the agreed budget and timeline — no surprises."
+      },
+      "dedicated": {
+        "title": "Dedicated Support",
+        "description": "We offer strong after-sales service and maintenance to keep your systems running efficiently long after installation."
+      },
+      "multiLocation": {
+        "title": "Multi-Location Support    ",
+        "description": "Comprehensive Turnkey Support Across Multiple Locations."
+      },
+      "competitve": {
+        "title": "Competitive prices",
+        "description": "Delivering professional solutions at highly competitive rates."
+      }
+    }
+  },
+  "projects": {
+    "of": "of",
+    "title": "Featured",
+    "projects": "Projects",
+    "subtitle": "Showcasing our expertise through successful project implementations across various industries",
+    "categories": {
+      "all": "All Projects",
+      "fire": "Fire Systems",
+      "piping": "Industrial Piping",
+      "mechanical": "Mechanical Systems"
+    },
+    "projectsList": {
+      "industrialFire": {
+        "title": "Industrial Complex Fire Protection",
+        "client": "Manufacturing Corp",
+        "description": "Complete fire detection and suppression system installation",
+        "features": [
+          "Smoke Detection",
+          "Sprinkler System",
+          "Fire Alarm Panel",
+          "Emergency Lighting"
+        ]
+      },
+      "steamPiping": {
+        "title": "Steam Piping Installation",
+        "client": "Power Plant Ltd",
+        "description": "High-pressure steam piping system for power generation",
+        "features": [
+          "Steam Lines",
+          "Pressure Testing",
+          "Insulation",
+          "Safety Valves"
+        ]
+      },
+      "hvac": {
+        "title": "Commercial Building HVAC",
+        "client": "Office Tower Inc",
+        "description": "Complete HVAC system design and installation",
+        "features": [
+          "Air Conditioning",
+          "Ventilation",
+          "Control Systems",
+          "Energy Efficiency"
+        ]
+      },
+      "warehouse": {
+        "title": "Warehouse Fire Safety System",
+        "client": "Logistics Hub",
+        "description": "Large-scale fire protection for warehouse facility",
+        "features": [
+          "Early Warning",
+          "Suppression System",
+          "Smoke Evacuation",
+          "Emergency Access"
+        ]
+      },
+      "compressedAir": {
+        "title": "Compressed Air System",
+        "client": "Manufacturing Plant",
+        "description": "Industrial compressed air distribution system",
+        "features": [
+          "Air Compressors",
+          "Distribution Lines",
+          "Filtration",
+          "Pressure Control"
+        ]
+      },
+      "hospital": {
+        "title": "Hospital Fire Protection",
+        "client": "Medical Center",
+        "description": "Critical fire safety systems for healthcare facility",
+        "features": [
+          "Zone Control",
+          "Smoke Barriers",
+          "Emergency Power",
+          "Life Safety"
+        ]
+      }
+    },
+    "readyToStart": "Ready to Start Your Project?",
+    "readyDescription": "Let our experienced team help you design and implement the perfect solution for your needs.",
+    "discussProject": "Discuss Your Project"
+  },
+  "contact": {
+    "title": "Get In",
+    "touch": "Touch",
+    "subtitle": "Ready to discuss your fire protection or industrial piping project? Contact our expert team for a free consultation.",
+    "contactInfo": "Contact Information",
+    "contactDescription": "Get in touch with us for expert fire protection and industrial solutions. We're here to help 24/7.",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "visitUs": "Visit Us",
+    "emergencyLine": "24/7 Emergency Line",
+    "emergencyServices": "Emergency Services",
+    "emergencyDescription": "For fire safety emergencies, call our 24/7 hotline immediately.",
+    "emergency": "Emergency",
+    "sendMessage": "Send Us a Message",
+    "form": {
+      "msgSuccess": "Message Sent Successfully!",
+      "getBack": "We'll get back to you shortly.",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "service": "Service Interested In",
+      "selectService": "Select a service",
+      "message": "Message",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your.email@example.com",
+      "phonePlaceholder": "ypur phone number",
+      "companyPlaceholder": "Your company name",
+      "messagePlaceholder": "Tell us about your project requirements...",
+      "sendMessage": "Send Message",
+      "required": "*"
+    },
+    "services": [
+      "Fire Detection Systems",
+      "Fire Suppression Systems",
+      "Industrial Piping",
+      "HVAC Systems",
+      "Maintenance Services",
+      "Emergency Services",
+      "Consultation",
+      "Other"
+    ],
+    "success": {
+      "title": "Message Sent Successfully!",
+      "description": "We'll get back to you within 24 hours."
+    }
+  },
+  "footer": {
+    "description": "Leading provider of fire protection and industrial piping solutions with over 15 years of excellence in safety engineering.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "stayConnected": "Stay Connected",
+    "newsletter": "Subscribe to our newsletter for the latest updates on fire safety and industrial solutions.",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Enter your email",
+    "followUs": "Follow Us",
+    "copyright": "© 2024 SMART PRO. All rights reserved.",
+    "licensed": "Licensed & Insured Fire Protection Specialists",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "services": [
+      "Fire Detection Systems",
+      "Fire Suppression Systems",
+      "Industrial Piping",
+      "HVAC Systems",
+      "Emergency Services",
+      "Maintenance & Support"
+    ]
+  },
+  "floatingQuote": {
+    "quickQuote": "Quick Quote",
+    "description": "Get a fast response from our experts",
+    "name": "Name",
+    "email": "Email",
+    "projectDetails": "Project Details",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your.email@example.com",
+    "projectPlaceholder": "Brief description of your project...",
+    "sendRequest": "Send Quote Request",
+    "fullContactForm": "Or visit our full contact form",
+    "required": "*"
+  },
+  "common": {
+    "scrollToExplore": "Scroll to explore",
+    "backToTop": "Back to Top"
+  }
+}

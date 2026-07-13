@@ -1,0 +1,395 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Industrial Complex Fire Protection",
+    client: "Imco Foods for Food Industries",
+    category: "fire",
+    image:
+      "https://media.licdn.com/dms/image/v2/C4D1BAQF_o4iUPA5e6A/company-background_10000/company-background_10000/0/1583224243092/imco_premium_foods_ltd_cover?e=2147483647&v=beta&t=WsANrDVehbJ7WkG7ZbxG9T4Y5DUMVwFqkx25Pmze5Xo",
+    description: "Complete fire detection and suppression system installation",
+    features: [
+      "Smoke Detection",
+      "Sprinkler System",
+      "Fire Alarm Panel",
+      "Emergency Lighting",
+    ],
+  },
+  {
+    id: 29,
+    title: "Steam Piping Installation",
+    client: "Power Plant Ltd",
+    category: "piping",
+    image:
+      "https://gaspipes.co.uk/wp-content/uploads/2023/03/Bowen73_with_installtion_engineers_2d0e5167-d828-43d6-be0f-130d5ac80c7a.png",
+    description: "High-pressure steam piping system for power generation",
+    features: [
+      "Steam Lines",
+      "Pressure Testing",
+      "Insulation",
+      "Safety Valves",
+    ],
+  },
+
+  {
+    id: 4,
+    title: "Firefighting Network",
+    client: "EgyTrans – Transport Garage  ",
+    category: "fire",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8peLstZr4XZXKXxuj8KcskoHO3hKt0N_mA&s",
+    description: "Large-scale fire protection for warehouse facility",
+    features: [
+      "Early Warning",
+      "Suppression System",
+      "Smoke Evacuation",
+      "Emergency Access",
+    ],
+  },
+
+  {
+    id: 7,
+    title: "Firefighting System, Fire alarm system ",
+    client: "Alex Apparels – Free Zone",
+    category: "fire",
+    image:
+      "data:image/jpeg;base64,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",
+    description: "Critical fire safety systems for healthcare facility",
+    features: [
+      "Zone Control",
+      "Smoke Barriers",
+      "Emergency Power",
+      "Life Safety",
+    ],
+  },
+  {
+    id: 8,
+    title: "Firefighting Network",
+    client: "Income Egypt – Free Zone",
+    category: "fire",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8peLstZr4XZXKXxuj8KcskoHO3hKt0N_mA&s",
+    description: "Critical fire safety systems for healthcare facility",
+    features: [
+      "Zone Control",
+      "Smoke Barriers",
+      "Emergency Power",
+      "Life Safety",
+    ],
+  },
+  {
+    id: 9,
+    title: "Firefighting System, Fire alarm system ",
+    client: "Star Cool – Cooling Systems",
+    category: "fire",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8peLstZr4XZXKXxuj8KcskoHO3hKt0N_mA&s",
+    description: "Critical fire safety systems for healthcare facility",
+    features: [
+      "Zone Control",
+      "Smoke Barriers",
+      "Emergency Power",
+      "Life Safety",
+    ],
+  },
+  {
+    id: 10,
+    title: "Firefighting Network",
+    client: "Al-Madina Hotel",
+    category: "fire",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8peLstZr4XZXKXxuj8KcskoHO3hKt0N_mA&s",
+    description: "Critical fire safety systems for healthcare facility",
+    features: [
+      "Zone Control",
+      "Smoke Barriers",
+      "Emergency Power",
+      "Life Safety",
+    ],
+  },
+  {
+    id: 21,
+    title: "Compressed Air & Firefighting Network",
+    client: "AMS Number 1 – Footwear & Garment Factory",
+    category: "piping",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDE9lzFQLtZfkFOGvRGdAG7FRgSLvItFO_Dg&s",
+    description: "Industrial compressed air distribution system",
+    features: [
+      "Air Compressors",
+      "Distribution Lines",
+      "Filtration",
+      "Pressure Control",
+    ],
+  },
+  {
+    id: 22,
+    title: "Compressed Air Network ",
+    client: "Infinity Steel – Free Zone",
+    category: "piping",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQF_k5f5xNZGAg/company-logo_200_200/company-logo_200_200/0/1728562807596?e=2147483647&v=beta&t=OI7vw2Aa1qbvSdp8aTDyRoC9Pt71eXWdTLKmK4kya0k",
+    description: "Industrial compressed air distribution system",
+    features: [
+      "Air Compressors",
+      "Distribution Lines",
+      "Filtration",
+      "Pressure Control",
+    ],
+  },
+  {
+    id: 23,
+    title: "Compressed Air Network",
+    client: "Al-Safa Building 32 – Km",
+    category: "piping",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeFMR40ljenwcpir742GoBmetFPIpp9OA0A&s",
+    description: "Industrial compressed air distribution system",
+    features: [
+      "Air Compressors",
+      "Distribution Lines",
+      "Filtration",
+      "Pressure Control",
+    ],
+  },
+  {
+    id: 24,
+    title: "Compressed Air Network",
+    client: "Future Hands Oncology Hospital",
+    category: "piping",
+    image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg",
+    description: "Industrial compressed air distribution system",
+    features: [
+      "Air Compressors",
+      "Distribution Lines",
+      "Filtration",
+      "Pressure Control",
+    ],
+  },
+  {
+    id: 25,
+    title: "Compressed Air Network",
+    client: "Tax Authority Building – Gianaclis",
+    category: "piping",
+    image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg",
+    description: "Industrial compressed air distribution system",
+    features: [
+      "Air Compressors",
+      "Distribution Lines",
+      "Filtration",
+      "Pressure Control",
+    ],
+  },
+  {
+    id: 26,
+    title: "Compressed Air Network",
+    client: "El Sewedy Meters – Free Zone",
+    category: "piping",
+    image:
+      "data:image/jpeg;base64,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1l5e5jb3d282ubcXvbp6rGhz9DpK6ICJ2nsjBicx9QJIsz5Da9nb3cAmmdtOl4UqW0jHtj7uqhlLmbxnIbWBINvf0+aaNptQSyvjY6WPunkeeO7TY/UE3C2athAQcHiThSirwO+ZZ7R5Zm7PH+Y+q5ZMNcntP4fUc3FndJ8fhEf90UOX74/H+zg3L3v/AOFG/co/K4/6myduuz/VIdD4A06lIf3ZleOT5De30by/Rd6YKVVvK6xyc8amdQla7Kqf1Fk+RPhgQ/sIyLHwCyCx+oLIICAnnQLHwPqyCAgIwIyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD//2Q==",
+    description: "Industrial compressed air distribution system",
+    features: [
+      "Air Compressors",
+      "Distribution Lines",
+      "Filtration",
+      "Pressure Control",
+    ],
+  },
+  {
+    id: 40,
+    title: "Compressed Air & Steam network, Boiler Room ",
+    client: "AMS Number 1 – Footwear & Garment Factory",
+    category: "mechanical",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDE9lzFQLtZfkFOGvRGdAG7FRgSLvItFO_Dg&s",
+    description: "Complete HVAC system design and installation",
+    features: [
+      "Air Conditioning",
+      "Ventilation",
+      "Control Systems",
+      "Energy Efficiency",
+    ],
+  },
+  {
+    id: 41,
+    title: "Steam Network",
+    client: "Biogeneric Pharmaceuticals Factory",
+    category: "mechanical",
+    image:
+      "https://biogenericpharma.com/wp-content/uploads/2024/01/About-1.jpg",
+    description: "Complete HVAC system design and installation",
+    features: [
+      "Air Conditioning",
+      "Ventilation",
+      "Control Systems",
+      "Energy Efficiency",
+    ],
+  },
+  {
+    id: 42,
+    title: "Steam & Boiled water network",
+    client: "Pharco Pharmaceuticals Group",
+    category: "mechanical",
+    image:
+      "data:image/jpeg;base64,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",
+    description: "Complete HVAC system design and installation",
+    features: [
+      "Air Conditioning",
+      "Ventilation",
+      "Control Systems",
+      "Energy Efficiency",
+    ],
+  },
+];
+export const projects2 = [
+  {
+    id: 1,
+    title: "Firefighting Network",
+    client: "Imco Foods for Food Industries ",
+    category: "fire",
+  },
+  {
+    id: 2,
+    title: "Firefighting Network",
+    client: "Al-Sanousi Grill Palace ",
+    category: "fire",
+  },
+  {
+    id: 3,
+    title: "Firefighting Network",
+    client: "EgyTrans – Transport Garage  ",
+    category: "fire",
+  },
+  {
+    id: 4,
+    title: "Firefighting Network",
+    client: "Jeddah Hotel ",
+    category: "fire",
+  },
+  {
+    id: 5,
+    title: "Firefighting Network",
+    client: "Al-Hamra Oil Company  ",
+    category: "fire",
+  },
+  {
+    id: 6,
+    title: "Firefighting Network",
+    client: "Bab Sharq Emergency Police HQ  ",
+    category: "fire",
+  },
+  {
+    id: 7,
+    title: "Firefighting Network",
+    client: "Hilalia Private School   ",
+    category: "fire",
+  },
+  {
+    id: 8,
+    title: "Firefighting Network",
+    client: "Income Egypt – Free Zone   ",
+    category: "fire",
+  },
+  {
+    id: 9,
+    title: "Firefighting Network",
+    client: "Tay Plast – Packaging    ",
+    category: "fire",
+  },
+  {
+    id: 10,
+    title: "Firefighting Network",
+    client: "Al-Mutawakkil Wood Imports   ",
+    category: "fire",
+  },
+  {
+    id: 11,
+    title: "Firefighting Network",
+    client: "Al-Madina Hotel ",
+    category: "fire",
+  },
+  {
+    id: 12,
+    title: "Firefighting System, Fire alarm system ",
+    client: "Star Cool – Cooling Systems ",
+    category: "fire",
+  },
+  {
+    id: 13,
+    title: "Firefighting System, Fire alarm system ",
+    client: "Alex Apparels – Free Zone  ",
+    category: "fire",
+  },
+
+  {
+    id: 20,
+    title: " Compressed Air & Firefighting Network",
+    client: "AMS Number 1 – Footwear & Garment Factory ",
+    category: "piping",
+  },
+  {
+    id: 21,
+    title: " Compressed Air Network & Chilled Water ",
+    client: "Pharco Pharmaceuticals Group  ",
+    category: "piping",
+  },
+  // {
+  //   id: 22,
+  //   title: "Compressed Air Network ",
+  //   client: "Infinity Steel – Free Zone  ",
+  //   category: "piping",
+  // },
+  {
+    id: 23,
+    title: "Compressed Air Network ",
+    client: "Al-Safa Building 32 – Km  ",
+    category: "piping",
+  },
+  {
+    id: 25,
+    title: "Compressed Air Network ",
+    client: "Future Hands Oncology Hospital   ",
+    category: "piping",
+  },
+  {
+    id: 26,
+    title: "Compressed Air Network ",
+    client: "Tax Authority Building – Gianaclis   ",
+    category: "piping",
+  },
+  {
+    id: 27,
+    title: "Compressed Air Network ",
+    client: "Nebula Coffee Factory – Sadat City  ",
+    category: "piping",
+  },
+  {
+    id: 28,
+    title: "Compressed Air Network ",
+    client: "El Sewedy Meters – Free Zone  ",
+    category: "piping",
+  },
+  {
+    id: 29,
+    title: "Compressed Air Network & Vacuum network ",
+    client: "Emirates Smart Solutions - ADASI  ",
+    category: "piping",
+  },
+  {
+    id: 40,
+    title: "Compressed Air & Steam network, Boiler Room ",
+    client: "AMS Number 1 – Footwear & Garment Factory  ",
+    category: "mechanical",
+  },
+  {
+    id: 41,
+    title: "Steam Network",
+    client: "Biogeneric Pharmaceuticals Factory  ",
+    category: "mechanical",
+  },
+  {
+    id: 42,
+    title: "Steam & Boiled water network",
+    client: "Pharco Pharmaceuticals Group  ",
+    category: "mechanical",
+  },
+];
