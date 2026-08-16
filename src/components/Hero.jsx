@@ -1,17 +1,11 @@
 import { motion } from "framer-motion";
 // import { ArrowRightIcon, PlayIcon } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
-
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section
@@ -97,25 +91,19 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <motion.button
-                className="bg-gradient-to-r from-fire-red to-fire-orange hover:from-fire-red/90 hover:to-fire-orange/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection("#contact")}
+              <Link
+                to="/contact"
+                className="inline-block bg-gradient-to-r from-fire-red to-fire-orange hover:from-fire-red/90 hover:to-fire-orange/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               >
                 <span> {t("hero.requestQuote")}</span>
-                {/* <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform" /> */}
-              </motion.button>
+              </Link>
 
-              <motion.button
-                className="border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection("#projects")}
+              <Link
+                to="/projects"
+                className="inline-block border-2 border-white/30 hover:border-white hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               >
-                {/* <PlayIcon className="h-5 w-5" /> */}
                 <span>{t("hero.exploreProjects")}</span>
-              </motion.button>
+              </Link>
             </motion.div>
 
             {/* Stats */}

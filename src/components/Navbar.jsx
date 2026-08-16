@@ -5,9 +5,12 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+import { Link, useLocation } from "react-router-dom";
+
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ activeSection }) => {
+const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
   const isRTL = i18n.language === "ar";
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,27 +26,16 @@ const Navbar = ({ activeSection }) => {
   }, []);
 
   const navLinks = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.about"), href: "#about" },
-    { name: t("nav.services"), href: "#services" },
-    { name: t("nav.vision"), href: "#vision" },
-    { name: t("nav.projects"), href: "#projects" },
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.services"), href: "/services" },
+    { name: t("nav.vision"), href: "/vision" },
+    { name: t("nav.projects"), href: "/projects" },
   ];
 
-  const scrollToSection = (href) => {
+  const handleLinkClick = () => {
     setIsMenuOpen(false);
-    setTimeout(() => {
-      const element = document.querySelector(href);
-      if (element) {
-        const navbarHeight = document.querySelector("nav")?.offsetHeight || 80;
-        const y =
-          element.getBoundingClientRect().top +
-          window.pageYOffset -
-          navbarHeight;
-
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    }, 30);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -82,36 +74,35 @@ const Navbar = ({ activeSection }) => {
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center space-x-4">
               {navLinks.map((link) => (
-                <motion.button
+                <Link
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
+                  to={link.href}
+                  onClick={handleLinkClick}
                   className={`relative font-medium transition-colors duration-300 focus:outline-none ${
                     isRTL && "mx-4"
                   }  ${
-                    activeSection === link.href.slice(1)
+                    location.pathname === link.href
                       ? "text-fire-red   "
                       : "text-gray-700 hover:text-fire-red"
                   }`}
-                  whileHover={{ scale: 1.05 }}
                 >
                   {link.name}
-                  {activeSection === link.href.slice(1) && (
+                  {location.pathname === link.href && (
                     <motion.div
                       className="absolute -bottom-1 left-0 right-0 h-0.5 bg-fire-red"
                       layoutId="activeTab"
                     />
                   )}
-                </motion.button>
+                </Link>
               ))}
 
-              <motion.button
-                className="  bg-gradient-to-r from-fire-red to-fire-orange hover:from-fire-red/90 hover:to-fire-orange/90 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection("#contact")}
+              <Link
+                to="/contact"
+                className="inline-block bg-gradient-to-r from-fire-red to-fire-orange hover:from-fire-red/90 hover:to-fire-orange/90 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+                onClick={handleLinkClick}
               >
                 {t("nav.contact")}
-              </motion.button>
+              </Link>
             </div>
             {/* Language Switcher */}
             <LanguageSwitcher />
@@ -146,20 +137,22 @@ const Navbar = ({ activeSection }) => {
       >
         <div className="px-6 py-4 space-y-3 ">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.name}
-              onClick={() => scrollToSection(link.href)}
-              className="block   text-left py-2 text-gray-700 hover:text-fire-red transition-colors duration-300  "
+              to={link.href}
+              onClick={handleLinkClick}
+              className="block text-left py-2 text-gray-700 hover:text-fire-red transition-colors duration-300"
             >
               {link.name}
-            </button>
+            </Link>
           ))}
-          <button
-            className="w-full bg-gradient-to-r from-fire-red to-fire-orange text-white px-6 py-2 rounded-lg font-medium mt-4"
-            onClick={() => scrollToSection("#contact")}
+          <Link
+            to="/contact"
+            className="block text-center w-full bg-gradient-to-r from-fire-red to-fire-orange text-white px-6 py-2 rounded-lg font-medium mt-4"
+            onClick={handleLinkClick}
           >
             {t("nav.contact")}
-          </button>
+          </Link>
         </div>
       </motion.div>
     </motion.nav>

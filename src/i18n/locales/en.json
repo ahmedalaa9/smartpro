@@ -30,7 +30,6 @@
       "fireSuppression": "Fire Suppression",
       "gasDetection": "Gas Detection",
       "heatSensors": "Heat Sensors",
-
       "IndustrialPiping": "Industrial Piping Solutions",
       "pipingSubTitle": "Complete installation solutions",
       "steamsystems": "Steam Systems",
@@ -277,7 +276,64 @@
     },
     "readyToStart": "Ready to Start Your Project?",
     "readyDescription": "Let our experienced team help you design and implement the perfect solution for your needs.",
-    "discussProject": "Discuss Your Project"
+    "discussProject": "Discuss Your Project",
+    "list": [
+      {
+        "title": "Boiler and Steam Piping System Installation Works",
+        "client": "Various Clients",
+        "description": "Provide complete boiler plant and steam piping installation, including steam generation connections, main steam lines, branch distribution lines, condensate recovery lines, drain piping, safety valves, control valves, traps, supports, insulation, identification, and all associated accessories.",
+        "features": [
+          "Steam Generation",
+          "Main Steam Lines",
+          "Safety Valves",
+          "Insulation"
+        ]
+      },
+      {
+        "title": "Compressed Air, Vacuum and Gas Network Installation Works",
+        "client": "Various Clients",
+        "description": "Provide complete installation of compressed air, vacuum, nitrogen, and oxygen piping networks, including material supply, fabrication, installation, testing, and inspection in accordance with project requirements.",
+        "features": [
+          "Compressed Air",
+          "Vacuum",
+          "Nitrogen & Oxygen",
+          "Testing & Inspection"
+        ]
+      },
+      {
+        "title": "Fire Protection Piping System Works",
+        "client": "Various Clients",
+        "description": "Supply, Installation, Testing and Commissioning of Complete Firefighting Piping System. Provide all labor, materials, equipment, tools, and accessories necessary for the complete installation of the firefighting piping system, including pipes, fittings, flanges, couplings, valves, supports, hangers, anchors, sleeves, identification labels, sprinkler branch connections, and equipment connections. Execute all works in accordance with the approved shop drawings, project specifications, and applicable codes and standards. The scope includes pipe cutting, threading, welding, grooving, painting/coating where specified, pressure testing, flushing, cleaning, testing, commissioning, and obtaining the Engineer's approval, ensuring the system is complete, fully operational, and ready for service.",
+        "features": [
+          "Sprinkler System",
+          "Pipe Welding & Grooving",
+          "Pressure Testing",
+          "Commissioning"
+        ]
+      },
+      {
+        "title": "HVAC Chilled Water Network Installation Works",
+        "client": "Various Clients",
+        "description": "Chilled water system: Installation of chilled water piping, valves, supports, insulation, equipment connections, pressure testing, flushing, and commissioning in accordance with approved drawings and project specifications.",
+        "features": [
+          "Chilled Water Piping",
+          "Equipment Connections",
+          "Insulation",
+          "Pressure Testing"
+        ]
+      },
+      {
+        "title": "Supply, Installation and Finishing of Wall Sandwich Panel System",
+        "client": "Various Clients",
+        "description": "Supply and install wall sandwich panels, including framing, insulation, joint sealing, accessories, and finishing works as per approved drawings and specifications.",
+        "features": [
+          "Sandwich Panels",
+          "Insulation",
+          "Joint Sealing",
+          "Finishing Works"
+        ]
+      }
+    ]
   },
   "contact": {
     "title": "Get In",
@@ -364,5 +420,21 @@
   "common": {
     "scrollToExplore": "Scroll to explore",
     "backToTop": "Back to Top"
+  },
+  "home": {
+    "welcome": "Welcome to ",
+    "subtitle": "Your trusted partner in fire safety and industrial solutions. We deliver excellence through innovation, safety, and unwavering commitment to quality.",
+    "whyChooseUs": "Why Choose Us",
+    "whyChooseUsDesc": "We provide industry-leading fire protection and industrial piping solutions with a focus on safety, reliability, and excellence. Our team of certified professionals ensures every project meets the highest international standards.",
+    "contactUsNow": "Contact Us Now",
+    "readMore": "Read More",
+    "aboutBrief": "SMART PRO has established itself as a trusted partner in fire protection and industrial installations. With over 15 years of excellence, our commitment to innovation has made us the preferred choice for businesses across various industries.",
+    "servicesBrief": "We provide comprehensive fire protection and industrial solutions including fire alarm systems, sprinkler systems, gas suppression, industrial piping, HVAC installations, and mechanical utility systems — all tailored to your specific needs.",
+    "projectsBrief": "From boiler and steam piping systems to fire protection networks, HVAC chilled water installations, and sandwich panel systems — explore our diverse portfolio of successfully completed projects across multiple sectors."
+  },
+  "partners": {
+    "title": "Our Success",
+    "subtitle": "Partners",
+    "description": "Collaborating with industry leaders to deliver exceptional results and innovative solutions."
   }
 }

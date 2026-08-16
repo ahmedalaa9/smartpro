@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
-import // ShieldCheckIcon,
-// EnvelopeIcon,
-// PhoneIcon,
-// MapPinIcon,
-// ArrowUpIcon,
-"@heroicons/react/24/outline";
-
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -15,20 +9,20 @@ const Footer = () => {
   //   window.scrollTo({ top: 0, behavior: "smooth" });
   // };
 
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToSection = (href) => {
+  //   const element = document.querySelector(href);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   const quickLinks = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.about"), href: "#about" },
-    { name: t("nav.services"), href: "#services" },
-    { name: t("nav.vision"), href: "#vision" },
-    { name: t("nav.projects"), href: "#projects" },
-    { name: t("nav.contact"), href: "#contact" },
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.about"), href: "/about" },
+    { name: t("nav.services"), href: "/services" },
+    { name: t("nav.vision"), href: "/vision" },
+    { name: t("nav.projects"), href: "/projects" },
+    { name: t("nav.contact"), href: "/contact" },
   ];
 
   const services = [
@@ -118,13 +112,14 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
+                    <Link
+                      to={link.href}
+                      onClick={() => window.scrollTo(0, 0)}
                       className="text-gray-300 hover:text-fire-red transition-colors duration-300 flex items-center space-x-2 group"
                     >
                       <span className="w-1 h-1 bg-fire-orange rounded-full group-hover:w-2 transition-all duration-300 me-2"></span>
                       <span>{link.name}</span>
-                    </button>
+                    </Link>
                   </li>
                 ))}
               </ul>

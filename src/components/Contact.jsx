@@ -110,7 +110,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch("https://smartproeg.com/contact.php", {
+      const response = await fetch("https://www.smartproeg.com/contact.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
