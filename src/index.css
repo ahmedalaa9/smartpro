@@ -1,14 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-family: "Cairo", sans-serif;
+
     scroll-behavior: smooth;
   }
-  
+
+  html[dir="rtl"],
+  html[lang="ar"] {
+    font-family: "Cairo", sans-serif;
+  }
+
   body {
     overflow-x: hidden;
     line-height: 1.6;
@@ -23,7 +31,7 @@
   .btn-primary {
     @apply bg-gradient-to-r from-fire-red to-fire-orange hover:from-fire-red/90 hover:to-fire-orange/90 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105;
   }
-  
+
   .btn-secondary {
     @apply border-2 border-white/30 text-white hover:border-white hover:bg-white/10 font-semibold py-4 px-8 rounded-lg transition-all duration-300;
   }
@@ -63,17 +71,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #C62828, #FF6F00);
+  background: linear-gradient(to bottom, #c62828, #ff6f00);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #B71C1C, #E65100);
+  background: linear-gradient(to bottom, #b71c1c, #e65100);
 }
 
 /* Smooth animations */
 * {
-  transition-property: transform, opacity, background-color, border-color, color, fill, stroke;
+  transition-property:
+    transform, opacity, background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
@@ -83,13 +92,14 @@ button:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid #C62828;
+  outline: 2px solid #c62828;
   outline-offset: 2px;
 }
 
 /* Loading animation */
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -121,7 +131,8 @@ select:focus {
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -135,7 +146,8 @@ select:focus {
 
 /* Bounce animation for scroll indicator */
 @keyframes bounce-slow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -153,12 +165,12 @@ select:focus {
     font-size: 2rem;
     line-height: 1.2;
   }
-  
+
   h2 {
     font-size: 1.75rem;
     line-height: 1.3;
   }
-  
+
   h3 {
     font-size: 1.5rem;
     line-height: 1.4;
@@ -177,7 +189,7 @@ select:focus {
   .text-gray-600 {
     @apply text-gray-800;
   }
-  
+
   .text-gray-500 {
     @apply text-gray-700;
   }
@@ -190,7 +202,7 @@ select:focus {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .animate-bounce,
   .animate-pulse,
   .animate-float,
