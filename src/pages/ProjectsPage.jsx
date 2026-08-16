@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -31,20 +32,24 @@ const ProjectSlider = ({ images }) => {
           alt={`Slide ${currentIndex + 1}`}
         />
       </AnimatePresence>
-      
+
       {images.length > 1 && (
         <>
           <button
             onClick={prevSlide}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <ChevronLeftIcon className={`h-6 w-6 text-gray-800 ${isRTL ? "rotate-180" : ""}`} />
+            <ChevronLeftIcon
+              className={`h-6 w-6 text-gray-800 ${isRTL ? "rotate-180" : ""}`}
+            />
           </button>
           <button
             onClick={nextSlide}
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           >
-            <ChevronRightIcon className={`h-6 w-6 text-gray-800 ${isRTL ? "rotate-180" : ""}`} />
+            <ChevronRightIcon
+              className={`h-6 w-6 text-gray-800 ${isRTL ? "rotate-180" : ""}`}
+            />
           </button>
         </>
       )}
@@ -78,7 +83,10 @@ const ProjectsPage = () => {
             {t("projects.title", "Our Projects")}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t("projects.subtitle", "Discover our extensive portfolio of successfully executed projects across various industrial sectors.")}
+            {t(
+              "projects.subtitle",
+              "Discover our extensive portfolio of successfully executed projects across various industrial sectors.",
+            )}
           </p>
         </motion.div>
 
@@ -103,16 +111,26 @@ const ProjectsPage = () => {
                     </h2>
                   </div>
                   <p className="text-gray-600 text-lg leading-relaxed">
-                    {t(`projects.list.${index}.description`, project.description)}
+                    {t(
+                      `projects.list.${index}.description`,
+                      project.description,
+                    )}
                   </p>
-                  
+
                   <div className="pt-4 border-t border-gray-100">
-                    <h4 className="font-semibold text-gray-900 mb-4">{t('projects.keyFeatures', 'Key Features & Scope:')}</h4>
+                    <h4 className="font-semibold text-gray-900 mb-4">
+                      {t("projects.keyFeatures", "Key Features & Scope:")}
+                    </h4>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {project.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-fire-orange rounded-full"></div>
-                          <span className="text-gray-700">{t(`projects.list.${index}.features.${idx}`, feature)}</span>
+                          <span className="text-gray-700">
+                            {t(
+                              `projects.list.${index}.features.${idx}`,
+                              feature,
+                            )}
+                          </span>
                         </div>
                       ))}
                     </div>

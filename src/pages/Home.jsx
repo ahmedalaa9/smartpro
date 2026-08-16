@@ -62,7 +62,7 @@ const Home = () => {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg"
+                  src="/images/about-us.png"
                   alt={t("nav.about")}
                   className="w-full h-[400px] object-cover"
                 />
@@ -192,7 +192,7 @@ const Home = () => {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg"
+                  src="/images/services.png"
                   alt={t("nav.services")}
                   className="w-full h-[400px] object-cover"
                 />
