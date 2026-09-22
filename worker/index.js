@@ -64,6 +64,27 @@ export default {
           turnstileFormData.append("remoteip", clientIp);
         }
 
+        // const turnstileResponse = await fetch(
+        //   "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        //   {
+        //     method: "POST",
+        //     body: turnstileFormData,
+        //   },
+        // );
+
+        // Make sure the secret exists in the Worker runtime
+        if (!env.TURNSTILE_SECRET_KEY) {
+          console.error("TURNSTILE_SECRET_KEY is missing");
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Turnstile secret is not available in Worker runtime",
+            },
+            500,
+          );
+        }
+
         const turnstileResponse = await fetch(
           "https://challenges.cloudflare.com/turnstile/v0/siteverify",
           {
@@ -72,6 +93,28 @@ export default {
           },
         );
 
+        if (!turnstileResponse.ok) {
+          const turnstileErrorBody = await turnstileResponse.text();
+
+          console.error(
+            "Turnstile Siteverify HTTP error:",
+            turnstileResponse.status,
+            turnstileErrorBody,
+          );
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Turnstile Siteverify request failed",
+
+              debug: {
+                status: turnstileResponse.status,
+                body: turnstileErrorBody,
+              },
+            },
+            502,
+          );
+        }
         if (!turnstileResponse.ok) {
           return jsonResponse(
             {
