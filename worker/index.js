@@ -82,19 +82,35 @@ export default {
           );
         }
 
+        // const turnstileResult = await turnstileResponse.json();
+
+        // if (!turnstileResult.success) {
+        //   return jsonResponse(
+        //     {
+        //       success: false,
+        //       message: "Security verification failed",
+        //     },
+        //     403,
+        //   );
+        // }
+
+        // Form fields
+
         const turnstileResult = await turnstileResponse.json();
 
         if (!turnstileResult.success) {
+          console.error("Turnstile verification failed:", turnstileResult);
+
           return jsonResponse(
             {
               success: false,
               message: "Security verification failed",
+              turnstileErrors: turnstileResult["error-codes"] || [],
             },
             403,
           );
         }
 
-        // Form fields
         const name = getFormValue(formData, "name");
         const email = getFormValue(formData, "email");
         const phone = getFormValue(formData, "phone");
