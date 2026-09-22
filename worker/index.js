@@ -39,6 +39,62 @@ export default {
       try {
         const formData = await request.formData();
 
+        // Turnstile
+        const turnstileToken = getFormValue(formData, "cf-turnstile-response");
+
+        if (!turnstileToken) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Security verification is required",
+            },
+            400,
+          );
+        }
+
+        const turnstileFormData = new FormData();
+
+        turnstileFormData.append("secret", env.TURNSTILE_SECRET_KEY);
+
+        turnstileFormData.append("response", turnstileToken);
+
+        const clientIp = request.headers.get("CF-Connecting-IP");
+
+        if (clientIp) {
+          turnstileFormData.append("remoteip", clientIp);
+        }
+
+        const turnstileResponse = await fetch(
+          "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+          {
+            method: "POST",
+            body: turnstileFormData,
+          },
+        );
+
+        if (!turnstileResponse.ok) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Security verification failed",
+            },
+            502,
+          );
+        }
+
+        const turnstileResult = await turnstileResponse.json();
+
+        if (!turnstileResult.success) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Security verification failed",
+            },
+            403,
+          );
+        }
+
+        // Form fields
         const name = getFormValue(formData, "name");
         const email = getFormValue(formData, "email");
         const phone = getFormValue(formData, "phone");
@@ -46,7 +102,6 @@ export default {
         const service = getFormValue(formData, "service");
         const message = getFormValue(formData, "message");
 
-        // Required fields
         if (!name || !email || !message) {
           return jsonResponse(
             {
@@ -57,7 +112,6 @@ export default {
           );
         }
 
-        // Basic email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(email)) {
@@ -70,7 +124,6 @@ export default {
           );
         }
 
-        // Length limits
         if (
           name.length > 100 ||
           email.length > 254 ||
@@ -88,7 +141,6 @@ export default {
           );
         }
 
-        // Temporary response for testing only
         return jsonResponse({
           success: true,
           message: "Contact form data received successfully",
@@ -113,7 +165,6 @@ export default {
         );
       }
     }
-
     // Unknown API route
     if (url.pathname.startsWith("/api/")) {
       return jsonResponse(
