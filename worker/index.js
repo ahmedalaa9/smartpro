@@ -126,7 +126,7 @@ export default {
         }
 
         // const turnstileResult = await turnstileResponse.json();
-
+        //
         // if (!turnstileResult.success) {
         //   return jsonResponse(
         //     {
