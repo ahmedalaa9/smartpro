@@ -4,6 +4,15 @@
 
   "main": "./worker/index.js",
 
+  "vars": {
+    "CONTACT_FROM_EMAIL": "website@forms.smartproeg.com",
+    "CONTACT_TO_EMAIL": "info@smartproeg.com",
+  },
+
+  "secrets": {
+    "required": ["RESEND_API_KEY", "TURNSTILE_SECRET_KEY"],
+  },
+
   "assets": {
     "directory": "./dist/",
     "binding": "ASSETS",
