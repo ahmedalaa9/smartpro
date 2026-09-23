@@ -555,6 +555,352 @@ ${message}
      * Unknown API routes
      * ---------------------------------------------------------
      */
+
+    /*
+     * ---------------------------------------------------------
+     * Quick Quote API
+     * ---------------------------------------------------------
+     */
+    if (url.pathname === "/api/quick-quote") {
+      if (request.method !== "POST") {
+        return jsonResponse(
+          {
+            success: false,
+            message: "Method not allowed",
+          },
+          405,
+        );
+      }
+
+      try {
+        const formData = await request.formData();
+
+        /*
+         * ---------------------------------------------------------
+         * Turnstile
+         * ---------------------------------------------------------
+         */
+        const turnstileToken = getFormValue(formData, "cf-turnstile-response");
+
+        if (!turnstileToken) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Security verification is required",
+            },
+            400,
+          );
+        }
+
+        if (!env.TURNSTILE_SECRET_KEY) {
+          console.error("TURNSTILE_SECRET_KEY is missing");
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Server configuration error",
+            },
+            500,
+          );
+        }
+
+        const turnstileFormData = new FormData();
+
+        turnstileFormData.append("secret", env.TURNSTILE_SECRET_KEY);
+
+        turnstileFormData.append("response", turnstileToken);
+
+        const clientIp = request.headers.get("CF-Connecting-IP");
+
+        if (clientIp) {
+          turnstileFormData.append("remoteip", clientIp);
+        }
+
+        const turnstileResponse = await fetch(
+          "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+          {
+            method: "POST",
+            body: turnstileFormData,
+          },
+        );
+
+        if (!turnstileResponse.ok) {
+          console.error(
+            "Quick Quote Turnstile HTTP error:",
+            turnstileResponse.status,
+          );
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Security verification failed",
+            },
+            502,
+          );
+        }
+
+        const turnstileResult = await turnstileResponse.json();
+
+        if (!turnstileResult.success) {
+          console.error(
+            "Quick Quote Turnstile failed:",
+            turnstileResult["error-codes"],
+          );
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Security verification failed",
+            },
+            403,
+          );
+        }
+
+        /*
+         * ---------------------------------------------------------
+         * Fields
+         * ---------------------------------------------------------
+         */
+        const name = getFormValue(formData, "name");
+
+        const email = getFormValue(formData, "email");
+
+        const message = getFormValue(formData, "message");
+
+        /*
+         * ---------------------------------------------------------
+         * Validation
+         * ---------------------------------------------------------
+         */
+        if (!name || !email || !message) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Missing required fields",
+            },
+            422,
+          );
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Invalid email address",
+            },
+            422,
+          );
+        }
+
+        if (name.length > 100 || email.length > 254 || message.length > 5000) {
+          return jsonResponse(
+            {
+              success: false,
+              message: "Form data is too long",
+            },
+            422,
+          );
+        }
+
+        /*
+         * ---------------------------------------------------------
+         * Email configuration
+         * ---------------------------------------------------------
+         */
+        if (
+          !env.RESEND_API_KEY ||
+          !env.CONTACT_FROM_EMAIL ||
+          !env.CONTACT_TO_EMAIL
+        ) {
+          console.error("Quick Quote email configuration is missing");
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Server configuration error",
+            },
+            500,
+          );
+        }
+
+        /*
+         * ---------------------------------------------------------
+         * Escape HTML
+         * ---------------------------------------------------------
+         */
+        const safeName = escapeHtml(name);
+        const safeEmail = escapeHtml(email);
+
+        const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
+
+        /*
+         * ---------------------------------------------------------
+         * Email HTML
+         * ---------------------------------------------------------
+         */
+        const emailHtml = `
+      <!DOCTYPE html>
+      <html>
+        <body
+          style="
+            margin:0;
+            padding:0;
+            background:#f5f5f5;
+            font-family:Arial,Helvetica,sans-serif;
+            color:#222;
+          "
+        >
+          <div
+            style="
+              max-width:650px;
+              margin:30px auto;
+              background:#fff;
+              border:1px solid #eee;
+              border-radius:12px;
+              overflow:hidden;
+            "
+          >
+            <div
+              style="
+                background:#1f2937;
+                color:#fff;
+                padding:24px 30px;
+              "
+            >
+              <h2 style="margin:0;font-size:22px;">
+                New Quick Quote Request
+              </h2>
+
+              <p
+                style="
+                  margin:8px 0 0;
+                  color:#d1d5db;
+                  font-size:14px;
+                "
+              >
+                Smart Pro Website
+              </p>
+            </div>
+
+            <div style="padding:30px;">
+              <p>
+                <strong>Name:</strong>
+                ${safeName}
+              </p>
+
+              <p>
+                <strong>Email:</strong>
+                ${safeEmail}
+              </p>
+
+              <div
+                style="
+                  margin-top:25px;
+                  border-top:1px solid #eee;
+                  padding-top:20px;
+                "
+              >
+                <strong>Project Details:</strong>
+
+                <div
+                  style="
+                    margin-top:10px;
+                    line-height:1.7;
+                    background:#f9fafb;
+                    border-radius:8px;
+                    padding:16px;
+                  "
+                >
+                  ${safeMessage}
+                </div>
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+
+        const emailText = `
+New Quick Quote Request
+Smart Pro Website
+
+Name: ${name}
+Email: ${email}
+
+Project Details:
+${message}
+    `.trim();
+
+        /*
+         * ---------------------------------------------------------
+         * Resend
+         * ---------------------------------------------------------
+         */
+        const resendResponse = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+
+          headers: {
+            Authorization: `Bearer ${env.RESEND_API_KEY}`,
+
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            from: `Smart Pro Website <${env.CONTACT_FROM_EMAIL}>`,
+
+            to: [env.CONTACT_TO_EMAIL],
+
+            reply_to: email,
+
+            subject: "New Quick Quote Request - Smart Pro",
+
+            html: emailHtml,
+
+            text: emailText,
+          }),
+        });
+
+        if (!resendResponse.ok) {
+          const resendError = await resendResponse.text();
+
+          console.error(
+            "Quick Quote Resend error:",
+            resendResponse.status,
+            resendError,
+          );
+
+          return jsonResponse(
+            {
+              success: false,
+              message: "Unable to send your request right now",
+            },
+            502,
+          );
+        }
+
+        const resendResult = await resendResponse.json();
+
+        console.log("Quick Quote sent:", resendResult.id);
+
+        return jsonResponse({
+          success: true,
+          message: "Quick quote request sent successfully",
+        });
+      } catch (error) {
+        console.error("Quick Quote API error:", error);
+
+        return jsonResponse(
+          {
+            success: false,
+            message: "Something went wrong. Please try again.",
+          },
+          500,
+        );
+      }
+    }
+
     if (url.pathname.startsWith("/api/")) {
       return jsonResponse(
         {
