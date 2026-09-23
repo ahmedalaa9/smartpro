@@ -7,12 +7,14 @@ import {
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const TURNSTILE_SITE_KEY = "0x4AAAAAAFAbKnhuBTyp7uNV";
 
 const FloatingQuote = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -238,12 +240,22 @@ const FloatingQuote = () => {
    * ---------------------------------------------------------
    */
   const scrollToContact = () => {
-    const element = document.querySelector("#contact");
+    if (window.location.pathname === "/contact") {
+      const element = document.getElementById("contact");
 
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      navigate("/contact");
     }
 
     setIsOpen(false);
