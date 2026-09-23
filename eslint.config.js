@@ -12,7 +12,6 @@ export default [
       ecmaVersion: 2020,
       globals: {
         ...globals.browser,
-        grecaptcha: "readonly",
       },
       parserOptions: {
         ecmaVersion: "latest",
